@@ -13,6 +13,8 @@ class ClearScreen:
         pass
     
     def clear(self):
+        
+        # clear the screen
     
         return os.system("cls" if os.name=="nt" else "clear")
 
@@ -96,20 +98,6 @@ class HorseMobile:
             
         return count, post_list
         
-    #def CountMovements(self):
-    
-        #count = 0
-        
-        #for i, value in enumerate(self.board):
-            
-            #for j, val in enumerate(value):
-                
-                #if self.board[i][j] is not None:  
-                                      
-                    #count += self.PossibleMovement(i, j)                       
-                        
-        #return count
-    
     
     def CountMovements(self):
     
@@ -132,56 +120,10 @@ class HorseMobile:
             
             lista.append(lista_row)        
         
-        return lista    
+        return lista 
     
        
         
-    def Tree(self):
-        
-        lista = self.CountMovements()
-        
-        cantidad = 0
-        
-        
-        for i, value in enumerate(lista):
-            
-            for j, val in enumerate(value):    
-                
-                if len(lista[i][j]) > 0:
-                    
-                    print(f"lista: {lista[i][j]}")
-                    
-                    a = 1
-                
-                    while a < self.num:
-                        
-                        for x, valor in enumerate(lista[i][j]):                      
-                            
-                            #lista[i][j][x] = self.PossibleMovement(valor[0], valor[1])[1]  
-                            
-                            print(f"add: {self.PossibleMovement(valor[0], valor[1])[1]}")
-                                
-          
-                        a += 1                                
-                           
-        
-        suma = 0
-        
-        print(lista[0])
-        print(lista[1])
-        print(lista[2])
-        print(lista[3])
-        
-        for u, value in enumerate(lista):
-            
-            for v, val in enumerate(value):
-               
-                suma += len(val)
-            
-                                
-        return suma
-    
-    
     def TreeOrig(self):
         
         lista = self.CountMovements()
