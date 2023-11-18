@@ -3,8 +3,6 @@
 
 import os
 
-from itertools import combinations
-
 
 class ClearScreen:
     
@@ -36,6 +34,8 @@ class HorseMobile:
          
                 
     def PossibleMovement(self, i, j):
+    
+        # Third step function
         
         count = 0
         
@@ -101,17 +101,19 @@ class HorseMobile:
     
     def CountMovements(self):
     
-        lista = []
+        # Seconda step function
+    
+        lista = [] # Create an empty list
         
-        for i, value in enumerate(self.board):
+        for i, value in enumerate(self.board): # 0 to 3
         
-            lista_row = []
+            lista_row = [] # Create an empty list (row)
             
-            for j, val in enumerate(value):
+            for j, val in enumerate(value): # Iterate column in row i
                 
-                if self.board[i][j] is not None:  
+                if self.board[i][j] is not None: # If the value != None, evaluate  
                     
-                    lista_row.append(self.PossibleMovement(i, j)[1])
+                    lista_row.append(self.PossibleMovement(i, j)[1]) # Add the second element of a tuple in self.PossibleMovement function
                     
                 else:
                 
@@ -125,6 +127,8 @@ class HorseMobile:
        
         
     def TreeOrig(self):
+        
+        # First step function
         
         lista = self.CountMovements()
         
