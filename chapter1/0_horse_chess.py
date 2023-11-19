@@ -21,6 +21,7 @@ class HorseMobile:
 
     def __init__(self, num):
         
+        # Create the numbers in mobile phone
         self.board = [
             [1, 2, 3],
             [4, 5, 6],
@@ -28,8 +29,10 @@ class HorseMobile:
             [None, 0, None]
         ]
         
+        # shape of board, row x column
         self.dimension = (len(self.board), len(self.board[0]))        
         
+        # number of movements
         self.num = num                      
          
                 
@@ -96,12 +99,14 @@ class HorseMobile:
                         
                         post_list.append([i + c[0], j + c[1]])
             
-        return count, post_list
+        return count, post_list, num_list
         
     
     def CountMovements(self):
     
-        # Seconda step function
+        '''This function consist in iterate for every number of mobile phone, and call PossibleMovement function'''
+    
+        # Second step function
     
         lista = [] # Create an empty list
         
@@ -130,7 +135,7 @@ class HorseMobile:
         
         # First step function
         
-        lista = self.CountMovements()
+        lista = self.CountMovements() # 
         
         cantidad = 0
         
@@ -143,28 +148,21 @@ class HorseMobile:
                 for j, val in enumerate(value):    
                     
                     if len(lista[i][j]) > 0:
-                        
-                        print(f"lista: {lista[i][j]}")
 
                         aux_list = []
                             
                         for x, valor in enumerate(lista[i][j]):           
                                 
-                            aux_list += self.PossibleMovement(valor[0], valor[1])[1]
-                            
+                            aux_list += self.PossibleMovement(valor[0], valor[1])[1]                            
                         
                         lista[i][j] = aux_list
-                        print(f"aux_list: {aux_list}")
                                             
             a += 1                                
                            
         
         suma = 0
         
-        print(lista[0])
-        print(lista[1])
-        print(lista[2])
-        print(lista[3])
+        print(f"lista {lista}")
         
         for u, value in enumerate(lista):
             
